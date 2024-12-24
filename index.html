@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History of Christmas</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #ff9999, #cc3300), url('https://example.com/christmas-scene.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+        header {
+            background-color: rgba(44, 62, 80, 0.9);
+            color: #ecf0f1;
+            text-align: center;
+            padding: 20px 0;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            text-shadow: 2px 2px 5px #000;
+        }
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: justify;
+            background: rgba(255, 255, 255, 0.9);
+            color: #2c3e50;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+        header img {
+            width: 300px; /* เพิ่มขนาดต้นคริสต์มาสเป็น 150px */
+            position: absolute;
+            top: 50px;
+            display: block; /* ทำให้รูปภาพแสดงเป็นบล็อก */
+            margin: 10px auto; /* จัดให้รูปภาพอยู่กลาง */
+            left: 25px;
+        }
+        .music-control {
+            text-align: center;
+            margin: 20px 0;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 1rem;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        button:hover {
+            background-color: #c0392b;
+            transform: scale(1.1);
+        }
+        footer {
+            background-color: rgba(44, 62, 80, 0.9);
+            color: #ecf0f1;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            background: white;
+            opacity: 0.8;
+            border-radius: 50%;
+            animation: fall 10s linear infinite;
+        }
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+        .twinkling {
+            background: url('https://example.com/twinkling-stars.png') repeat;
+            animation: move-twinkling 200s linear infinite;
+        }
+        @keyframes move-twinkling {
+            from { background-position: 0 0; }
+            to { background-position: -10000px 5000px; }
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1> Christmas Day</h1>
+    </header>
+    <div class="container">
+       
+        <p>Christmas is celebrated annually on December 25th to honor the birth of Jesus Christ. This holiday is observed by billions of people around the world and is marked by a variety of traditions, including gift-giving, feasting, and attending religious services. The history of Christmas spans centuries, blending Christian, pagan, and secular customs to create the vibrant celebration we know today.</p>
+
+        <p>วันคริสต์มาสเป็นวันที่ 25 ธันวาคมของทุกปี เพื่อเฉลิมฉลองการประสูติของพระเยซูคริสต์ วันหยุดนี้มีการเฉลิมฉลองทั่วโลกโดยผู้คนนับพันล้านคน ซึ่งมักจะประกอบด้วยการแลกเปลี่ยนของขวัญ การรับประทานอาหาร การเข้าร่วมพิธีกรรมทางศาสนา และกิจกรรมอื่น ๆ ประวัติของวันคริสต์มาสมีความหลากหลายและยาวนาน ประกอบด้วยประเพณีของศาสนาคริสต์ ศาสนาอื่น ๆ และประเพณีทางโลกที่ผสมผสานกันจนเป็นเทศกาลที่สดใสในปัจจุบัน</p>
+
+    </div>
+
+    <div class="music-control">
+        <button id="toggle-music">Play Music</button>
+        <audio id="christmas-music" loop>
+            <source src="jingle-bells-278637.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Christmas History Webpage</p>
+    </footer>
+
+    <script>
+        const button = document.getElementById('toggle-music');
+        const audio = document.getElementById('christmas-music');
+        
+        button.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                button.textContent = 'Pause Music';
+            } else {
+                audio.pause();
+                button.textContent = 'Play Music';
+            }
+        });
+
+        // Snowfall effect
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.width = snowflake.style.height = Math.random() * 10 + 5 + 'px';
+            snowflake.style.animationDuration = Math.random() * 5 + 5 + 's';
+            document.body.appendChild(snowflake);
+            
+            setTimeout(() => {
+                snowflake.remove();
+            }, 10000);
+        }
+
+        setInterval(createSnowflake, 300);
+    </script>
+</body>
+<header>
+    <img src="8989.png" alt="Christmas tree">
+    
+    
+</header>
+
+</html>
+
